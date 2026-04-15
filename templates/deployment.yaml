@@ -9,9 +9,9 @@ metadata:
     tier: frontend
     component: frontend
   annotations:
-    kubernetes.io/change-cause: "{{.Values.deployment.changeCause}}" # This is used to track the changes in deployment, this will be helpful for rollback
+    kubernetes.io/change-cause: {{.Values.deployment.changeCause}} # This is used to track the changes in deployment, this will be helpful for rollback
 spec:
-  replicas: "{{.Values.deployment.replicas}}" # This is the number of pods we want to run, this is also called as desired state
+  replicas: {{.Values.deployment.replicas}} # This is the number of pods we want to run, this is also called as desired state
   selector:
     # using these labels replica set selects the pod
     matchLabels:
@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:"{{.Values.deployment.imageVersion}}" # This is the image tag, this is also called as application version, this is used to track the changes in application version, this will be helpful for rollback
+        image: nginx:{{.Values.deployment.imageVersion}} # This is the image tag, this is also called as application version, this is used to track the changes in application version, this will be helpful for rollback
 
 ---
 apiVersion: v1
