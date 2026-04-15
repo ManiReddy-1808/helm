@@ -3,4 +3,4 @@ deployment:
   changeCause: "Installing latest version"
   imageVersion: "latest"
 service:
-    type: LoadBalancer
+  type: LoadBalancer
